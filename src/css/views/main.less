@@ -1,0 +1,152 @@
+.question-box{
+    .bg-color(@color-white);
+    border-bottom: solid 0.25rem @questionbg;
+    .overflow;
+    p{
+        position: relative;
+        .font(@font-size,@font32,@questionbit);
+        .Lheight(1.12rem);
+        .padd(0,0.4rem,0,0.6rem);
+        .marg(0,0,0,0.4rem);
+        &::before{
+            content: "";
+            .positon(absolute,0,50%);
+            .widthHeight(0.4rem,0.4rem);
+            .marg(-0.2rem,0,0,0);
+            .backimage(@icons,no-repeat);
+            background-size: 0.55rem 2.3rem;
+        }
+        &.question-tit01{
+            &::before{
+                background-position: 0 0;
+            }
+        }
+        &.question-tit02{
+            &::before{
+                background-position: 0 -0.5rem;
+            }
+        }
+        &.question-tit03{
+            &::before{
+                background-position: 0 -1rem;
+            }
+        }
+        &.question-tit04{
+            &::before{
+                background-position: 0 -1.5rem;
+            }
+        }
+    }
+    dl{
+       dt{
+            display: flex;
+            display: -webkit-flex;
+            justify-content:space-between;
+            align-content: center; 
+            .font(@font-size,@font30,@questionbit);
+            .Lheight(0.98rem);
+            .padd(0,0.4rem,0,1rem);
+            i{
+                display: block;
+                .widthHeight(0.25rem,0.25rem);
+                .backimage(@icons,no-repeat);
+                background-size: 0.55rem 2.3rem;
+                .marg(0.35rem,0,0,0);
+                background-position: -0.3rem -2rem;
+                &.arrow-down{
+                    background-position: 0 -2rem;
+                }
+            }   
+       }
+       dd{
+            .bg-color(@questionbg);
+            .font(@font-size,@font25,@question-color);
+            .padd(0.2rem,0.4rem,0.2rem,1rem);
+            line-height: 0.4rem;
+            display: none;
+            &.show{
+                display: block;
+            }
+        }
+    }
+}
+.hd-download-player{
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    .widthHeight(100%,0.94rem);
+    .bg-color(rgba(30,35,45,0.9));
+    .padd(0,0.28rem,0,0.28rem);
+    .download-btn{
+        display: block;
+        .fr;
+        .widthHeight(1.94rem,0.62rem);
+        line-height:0.62rem;
+        .bg-color(@color-yellow);
+        .border-radius(0.3rem);
+        .tc;
+        .font(@font-size,@font32,@color-white);
+        .marg(0.16rem,0,0,0);
+    }
+    .download-details{
+        .fl;
+        width: 5rem;
+        .samll-logo{
+            display: inline-block;
+            .widthHeight(1.9rem,0.7rem);
+            .backimage(@h5logo,no-repeat);
+            background-size: contain;
+            text-indent: -9999px;
+            .marg(0.12rem,0.14rem,0,0);
+            .fl;
+        }
+       .download-txt{
+           .font(@font-size,@font22,@color-yellow);
+           font-style: italic;
+           .Lheight(0.94rem);
+       }
+    }
+}
+
+.showincome-bg{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .backimage(@incomebg,no-repeat);
+    background-size: 100% 100%;
+    header{
+        .padd(0.16rem,0,0,0.2rem);
+        .widthHeight(100%,0.5rem);
+        .logo{
+            .widthHeight(2.14rem,0.7rem);
+            .backimage(@h5logo,no-repeat);
+            background-size: contain;
+            text-indent: -9999px;
+            .fl;
+            .marg(0,0.1rem,0,0);
+        }
+        .intordue-txt{
+            .font(@font-size,@font20,@color-yellow);
+            .Lheight(0.7rem);
+        }
+    }
+    .inviting-ad{
+        .positon(absolute,50%,1.42rem);
+        .widthHeight(5.42rem,1.52rem);
+        .backimage(@txtbg,no-repeat);
+        background-size: contain;
+        .marg(0,0,0,-2.73rem);
+    }
+    .main-box{
+        position: absolute;
+        top:6.22rem;
+        width: 5rem;
+        .auto;
+        .inviting-code{
+            
+        }
+    }
+}

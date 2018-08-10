@@ -1,0 +1,142 @@
+.marg(@x1:0,@y1:0,@x2:0,@y2:0){	
+	 margin-top:@x1;
+	 margin-right:@y1;
+	 margin-bottom:@x2;
+	 margin-left:@y2;
+}
+.padd(@x1:0,@y1:0,@x2:0,@y2:0){
+	 padding-top:@x1;
+	 padding-right:@y1;
+	 padding-bottom:@x2;
+	 padding-left:@y2;
+}
+.border(@border-style:solid,@border-width:0.1rem,@color:@color-inputborder){
+	border:@border-style @border-width @color;
+}
+.border-radius(@radius){
+    border-radius:@radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.box-shadow(@h-shadow,@v-shadow,@blur,@color){
+    -webkit-box-shadow:@h-shadow @v-shadow @blur @color;
+    -moz-box-shadow:@h-shadow @v-shadow @blur @color;
+    -o-box-shadow:@h-shadow @v-shadow @blur @color;
+    -ms-box-shadow:@h-shadow @v-shadow @blur @color;
+    box-shadow:@h-shadow @v-shadow @blur @color;
+}
+
+.widthHeight(@width:@primary,@height:@primary){
+	width: @width;
+	height: @height;
+}
+.backimage(@url,@repeat) {
+	 background-image: @url; 
+	 background-repeat: @repeat;
+}
+.bg-color(@color){
+	background-color: @color;
+}
+.Lheight(@height:@index-height){ 
+	height: @height; 
+	line-height: @height;
+}
+.text-indent(@num:-9999px){
+	text-indent: @num;
+}
+.box-sizing{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.positon(@location:absolute,@left:0,@top:0){
+	position: @location;
+	left:@left;
+	top:@top;
+}
+.positonR(@location:absolute,@right:0,@top:0){
+	position: @location;
+	right:@right;
+	top:@top;
+}
+.positonB(@location:absolute,@right:0,@bottom:0){
+	position: @location;
+	right:@right;
+	bottom:@bottom;
+}
+
+//公共样式
+.clear{clear:both;font-size:0;height:0;line-height:0;}
+.clearfix{zoom:1;}
+.clearfix::after,.clearfix::before{content:"";display:table;}
+.clearfix::after {
+	clear: both;
+	content: '.';
+	display: block;
+	height: 0;
+	visibility: hidden;
+	line-height: 0;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.tr{
+	text-align: right;
+}
+.tl{
+	text-align: left;
+}
+.tc{
+	text-align:center;
+}
+.hidden{
+	display: none;
+}
+.show{
+	display: block;
+}
+section{
+	.widthHeight;
+	.overflow;
+}
+.overflow{
+	overflow: hidden;
+}
+.auto{
+	.marg(0,auto,0,auto);
+}
+
+.px2px(@name, @px){ 
+	@{name}: round(@px / 2) * 1px;
+	[data-dpr="2"] & { 
+		@{name}: @px * 1px; 
+	} 
+	// for mx3 
+	[data-dpr="2.5"] & { 
+		@{name}: round(@px * 2.5 / 2) * 1px; 
+	} 
+	// for 小米note 
+	[data-dpr="2.75"] & { 
+		@{name}: round(@px * 2.75 / 2) * 1px; 
+	} 
+	[data-dpr="3"] & { 
+	@{name}: round(@px / 2 * 3) * 1px 
+	} 
+	// for 三星note4 
+	[data-dpr="4"] & { 
+		@{name}: @px * 2px; 
+	} 
+} 
+
+.font(@name:@font-size,@size,@color){ 
+	 .px2px(@name,@size);
+	 color: @color;
+}
+
+
